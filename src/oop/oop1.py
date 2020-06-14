@@ -26,7 +26,10 @@ class Hangar:
         return f"Welcome to the {self.name}: Here are your vehicles: {self.categories}"
 
 
-hangar_vehicles = Hangar(
-    'Hangar', ['Ground Vehicles', 'Flight Vehicles', 'Starships'])
+ground_vehicles = Hangar(
+    'Garage', ['Car', 'Motorcycle'])
 
-print(hangar_vehicles)
+flight_vehicles = Hangar('Hangar', ['Airplane', 'Starship'])
+
+print(ground_vehicles)
+print(flight_vehicles)
