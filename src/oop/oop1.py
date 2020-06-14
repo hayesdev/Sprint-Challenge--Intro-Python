@@ -17,3 +17,8 @@
 #     pass
 #
 # Put a comment noting which class is the base class
+class Vehicle:
+    def __init__(self, type, category):
+        self.name = name
+        self.v_type = v_type
+        self.category = category
