@@ -20,17 +20,10 @@
 
 # Vehicle is the base class
 class Vehicle:
-    def __init__(self, name, types):
-        self.name = name
-        self.types = types
-
-    def __str__(self):
-        return f"Welcome to the {self.name} garage: Here are your vehicles: {self.types}"
+    pass
 
 
 class GroundVehicle(Vehicle):
-    def __init__(self, name, types):
-        super().__init__(name, types)
     pass
 
 
@@ -43,10 +36,12 @@ class Motorcycle(GroundVehicle):
 
 
 class FlightVehicle(Vehicle):
-    def __init__(self, name, types):
-        super().__init__(name, types)
+    pass
+
+
+class Airplane(FlightVehicle):
+    pass
 
 
 class Starship(FlightVehicle):
-    def __init__(self, name, types):
-        super().__init__(name, types)
+    pass
