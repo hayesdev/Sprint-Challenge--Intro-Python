@@ -17,19 +17,43 @@
 #     pass
 #
 # Put a comment noting which class is the base class
-class Hangar:
-    def __init__(self, name, categories):
+# Vehicle is the base class
+class Vehicle:
+    def __init__(self, name, types):
         self.name = name
-        self.categories = categories
+        self.types = types
 
     def __str__(self):
-        return f"Welcome to the {self.name}: Here are your vehicles: {self.categories}"
+        return f"Welcome to the {self.name} garage: Here are your vehicles: {self.types}"
 
 
-ground_vehicles = Hangar(
-    'Garage', ['Car', 'Motorcycle'])
+class GroundVehicle(Vehicle):
+    def __init__(self):
+        super().__init__(name, types)
 
-flight_vehicles = Hangar('Hangar', ['Airplane', 'Starship'])
+    def __str__(self):
+        return f"Welcome to the {self.name} garage: Here are your vehicles: {self.types}"
 
-print(ground_vehicles)
-print(flight_vehicles)
+
+class Car(GroundVehicle):
+    pass
+
+
+class Motorcycle(GroundVehicle):
+    pass
+
+
+class FlightVehicle(Vehicle):
+    def __init__(self):
+        super().__init__(name, types)
+
+    def __str__(self):
+        return f"Welcome to the {self.name} garage: Here are your vehicles: {self.types}"
+
+
+class Starship(FlightVehicle):
+    def __init__(self):
+        super().__init__(name, types)
+
+    def __str__(self):
+        return f"Welcome to the {self.name} garage: Here are your vehicles: {self.types}"
