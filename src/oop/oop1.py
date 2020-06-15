@@ -17,6 +17,7 @@
 #     pass
 #
 # Put a comment noting which class is the base class
+
 # Vehicle is the base class
 class Vehicle:
     def __init__(self, name, types):
@@ -28,11 +29,9 @@ class Vehicle:
 
 
 class GroundVehicle(Vehicle):
-    def __init__(self):
+    def __init__(self, name, types):
         super().__init__(name, types)
-
-    def __str__(self):
-        return f"Welcome to the {self.name} garage: Here are your vehicles: {self.types}"
+    pass
 
 
 class Car(GroundVehicle):
@@ -44,16 +43,10 @@ class Motorcycle(GroundVehicle):
 
 
 class FlightVehicle(Vehicle):
-    def __init__(self):
+    def __init__(self, name, types):
         super().__init__(name, types)
-
-    def __str__(self):
-        return f"Welcome to the {self.name} garage: Here are your vehicles: {self.types}"
 
 
 class Starship(FlightVehicle):
-    def __init__(self):
+    def __init__(self, name, types):
         super().__init__(name, types)
-
-    def __str__(self):
-        return f"Welcome to the {self.name} garage: Here are your vehicles: {self.types}"
