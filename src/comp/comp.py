@@ -30,7 +30,7 @@ humans = [
 print("Starts with D:")
 # Tried to create new list to access properties, but fixing syntax gave same output!!
 # names = [name.name for name in humans]
-#a = [human.name for human in humans if human.name[0] == 'D']
+# a = [human.name for human in humans if human.name[0] == 'D']
 # Even better !!!
 a = [human.name for human in humans if human.name.startswith('D')]
 print(a)
@@ -38,7 +38,7 @@ print(a)
 # Write a list comprehension that creates a list of names of everyone
 # whose name ends in "e".
 print("Ends with e:")
-#b = [human.name for human in humans if human.name[len(human.name) - 1] == 'e']
+# b = [human.name for human in humans if human.name[len(human.name) - 1] == 'e']
 b = [human.name for human in humans if human.name.endswith('e')]
 print(b)
 
@@ -47,7 +47,8 @@ print(b)
 print("Starts between C and G, inclusive:")
 # names = [name.name for name in humans]
 
-c = [human.name for human in humans if human.name[0] == 'C']
+c = [human.name for human in humans if human.name[0]
+     >= 'C' and human.name[0] <= 'G']
 print(c)
 
 # Write a list comprehension that creates a list of all the ages plus 10.
@@ -67,17 +68,18 @@ print(e)
 # age, for example ("David", 31), for everyone between the ages of 27 and 32,
 # inclusive.
 print("Names and ages between 27 and 32:")
-# f = [for human in humans if human.age >= 33]
-# print(f)
+f = [(human.name, human.age)
+     for human in humans if human.age >= 27 and human.age <= 32]
+print(f)
 
 # Write a list comprehension that creates a list of new Humans like the old
 # list, except with all the names uppercase and the ages with 5 added to them.
 # The "humans" list should be unmodified.
 print("All names uppercase:")
-g = [f'{human.name.upper()}, {human.age + 5}' for human in humans]
+g = [human.name.upper(), human.age + 5 for human in humans]
 print(g)
 
 # Write a list comprehension that contains the square root of all the ages.
 print("Square root of ages:")
-h = [human.age**2 for human in humans]
+h = [human.age**(1/2) for human in humans]
 print(h)
